@@ -1,0 +1,75 @@
+@font-face {
+    font-family: Reey-Regular;
+    src: url('../../fonts/Reey-Regular.otf');
+}
+
+@font-face {
+    font-family: "Open Sans ExtraBold";
+    src: url('../../fonts/Open Sans ExtraBold.ttf');
+}
+
+body {
+    margin: 0;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    padding: 0 20px;
+}
+
+a.active {
+    color: #2b2b2b;
+    background-color: white;
+    border-top-left-radius: 5px ;
+    border-top-right-radius: 5px;
+}
+
+.header {
+    /*height: 10vh;*/
+    background-color: #2b2b2b;
+    color: white;
+    font-size: 3rem;
+    text-decoration: none;
+}
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header-title {
+    /*cursor: pointer;*/
+    text-align: center;
+    font-family: Reey-Regular, serif;
+    padding-top: 30px;
+    padding-bottom: 60px;
+}
+
+.header-title a {
+    color: white;
+    background-color: #2b2b2b;
+}
+
+.header-navbar {
+    justify-content: space-between;
+}
+
+.header-navbar, .header-navbar > div {
+    display: flex;
+}
+
+/*.header-menu > div {*/
+/*    flex: 1;*/
+/*    height: 3rem;*/
+/*    font-family: Open Sans ExtraBold, serif;*/
+/*    font-size: 1.5rem;*/
+/*    border-radius: 5px;*/
+/*    text-align: center;*/
+/*}*/
+
+/*.header-menu > div:hover{*/
+/*    cursor: pointer;*/
+/*    background-color: #292b23;*/
+/*    color: white;*/
+/*}*/

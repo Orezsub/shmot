@@ -1,0 +1,53 @@
+@font-face {
+    font-family: "Open Sans ExtraBold";
+    src: url('../../fonts/Open Sans ExtraBold.ttf');
+}
+
+button, input {
+    background-color: white;
+}
+
+.shmot-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 20vh;
+}
+
+.shmot-form form {
+    padding: 20px;
+    border: solid #2b2b2b;
+    box-shadow: -20px 20px 10px #2b2b2b;
+}
+
+.shmot-form__title {
+    font-family: "Open Sans ExtraBold", serif;
+    font-size: 2rem;
+}
+
+.shmot-form__input, .shmot-form__input-file {
+    margin-top: 15px;
+}
+
+.shmot-form__input > Input {
+    width: 100%;
+    border-top: unset;
+    border-right: unset;
+    border-left: 2px solid #2b2b2b;
+    border-bottom: 2px solid #2b2b2b;
+    height: 30px;
+}
+
+.shmot-form__button {
+    font-family: "Open Sans ExtraBold", serif;
+    font-size: 1.5rem;
+    margin-top: 15px;
+    width: 100%;
+    box-shadow: -5px 5px 5px #2b2b2b;
+}
+
+.shmot-form__button:hover {
+    cursor: pointer;
+    background-color: #292b23;
+    color: white;
+}
+
