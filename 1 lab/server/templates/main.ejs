@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="/header.css">
+    <link rel="stylesheet" type="text/css" href="/main.css">
+    <title>SHMOT</title>
+</head>
+<%- include('header.ejs') %>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="clothes-list">
+                <h1>▼That's all what we have▼</h1>
+                <%
+                // const workingDir = __dirname.slice(0, __dirname.lastIndexOf('/'))
+                let index = 0;
+                shmots.forEach( shmot => {
+                    let urlGet = `?id=${index}`;
+                    let selected = selectedID === index ? "selected" : "";
+                %>
+                <li class="<%=selected%>" onclick=<%=`document.location.href=\"${urlGet}\"`%>> <%= shmot.name %> </li>
+                <%
+                    index++;
+                })
+                %>
+            </div>
+            <%
+                if (selectedID > -1) {
+                    let shmot = shmots[selectedID];
+            %>
+            <div class="clothes-view">
+                <div class="clothes-view__title">
+                    <%=shmot.name%>
+                </div>
+                <div class="clothes-view__description">
+                    <%=shmot.description%>
+                </div>
+                <div class="clothes-view__type">
+                    <%=shmot.type%>
+                </div>
+            <%
+                if (shmot.file) {
+            %>
+                <div class="clothes-view__photo">
+                    <img src="/<%=shmot.file%>" alt="">
+                </div>
+            <%
+                }
+            %>
+                <div class="clothes-view__price">
+                    <%=shmot.price%> $
+                </div>
+            </div>
+            <%
+                }
+            %>
+
+        </div>
+
+    </div>
+</body>
+</html>

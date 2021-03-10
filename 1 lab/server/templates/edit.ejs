@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/header.css">
+    <link rel="stylesheet" type="text/css" href="/add.css">
+</head>
+<%- include('header.ejs') %>
+<body>
+<%
+    if (shmot){
+%>
+    <div class="shmot-form">
+        <form enctype="multipart/form-data" action="/shmot/edit" method="post">
+            <div class="shmot-form__title">
+                Edit your shmot here
+            </div>
+            <div class="shmot-form__input">
+                <label>
+                    <input name="name" placeholder="Name" value="<%=shmot.name%>" required>
+                </label>
+            </div>
+            <div class="shmot-form__input">
+                <label>
+                    <input name="description" placeholder="Description" value="<%=shmot.description%>" required>
+                </label>
+            </div>
+            <div class="shmot-form__input">
+                <label>
+                    <select name="type">
+                        <option value="other" <% if (shmot.type === "other") { %> selected <% } %> >Other</option>
+                        <option value="hoodie" <% if (shmot.type === "hoodie") { %> selected <% } %> >Hoodie</option>
+                        <option value="socks" <% if (shmot.type === "socks") { %> selected <% } %> >Socks</option>
+                    </select>
+                </label>
+            </div>
+            <div class="shmot-form__input">
+                <label>
+                    <input type="number" name="price" placeholder="Price" value="<%=shmot.price%>" required>
+                </label>
+            </div>
+            <div class="shmot-form__input">
+                <input type="file" name="photo" placeholder="Add image">
+            </div>
+            <button type="submit" class="shmot-form__button">Edit</button>
+        </form>
+    </div>
+<%
+    }
+    else {
+%>
+    <div class="nothing">
+        <a href="/shmot/view">Please, choose any SHMOT</a>
+    </div>
+<%
+    }
+ %>
+
+
+</body>
+</html>
